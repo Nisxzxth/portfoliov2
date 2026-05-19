@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import * as api from "@/lib/api";
+import { Trash } from "lucide-react";
 
 type Section =
   | "overview"
@@ -915,7 +916,7 @@ function ProjectsSection({ data, reload }: { data: any; reload: () => void }) {
                   className='!px-2 !py-1.5'
                   onClick={() => del(p._id, p.image)}
                 >
-                  🗑
+                  <Trash className='w-3 h-3' />
                 </Btn>
               </div>
             </Card>
@@ -1173,7 +1174,7 @@ function ExperienceSection({
                   className='!px-2 !py-1.5'
                   onClick={() => del(item._id, item.logo)}
                 >
-                  🗑
+                  <Trash className='w-3 h-3' />
                 </Btn>
               </div>
             </Card>
@@ -1348,7 +1349,7 @@ function AchievementsSection({
                       className='!px-2 !py-1'
                       onClick={() => del(a._id, a.image)}
                     >
-                      🗑
+                      <Trash className='w-3 h-3' />
                     </Btn>
                   </div>
                 </div>
@@ -1569,7 +1570,7 @@ function FeedbackSection({ data, reload }: { data: any; reload: () => void }) {
                   className='!px-2 !py-1'
                   onClick={() => del(f._id, f.avatar)}
                 >
-                  🗑
+                  <Trash className='w-3 h-3' />
                 </Btn>
               </div>
             </Card>
@@ -1701,7 +1702,7 @@ function MessagesSection() {
                     className='!px-2 !py-1'
                     onClick={() => del(m._id)}
                   >
-                    🗑
+                    <Trash className='w-3 h-3' />
                   </Btn>
                 </div>
               </div>
@@ -1966,7 +1967,7 @@ function CustomSectionsPanel({
               className='!px-2 !py-1'
               onClick={() => del(sec.id)}
             >
-              🗑 Delete
+              <Trash className='w-3 h-3' />
             </Btn>
           </Card>
         ))}
